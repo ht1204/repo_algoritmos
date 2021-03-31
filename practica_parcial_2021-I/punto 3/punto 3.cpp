@@ -48,7 +48,7 @@ void series(){
 	for(int i=0; i < n; i++){
 		
 		sumaSerie += potencia(x, i) / factorial(i);
-		
+
 	}
 	
 	cout<<"\n\tResultado suma de serie : "<<sumaSerie;
@@ -56,24 +56,36 @@ void series(){
 
 double potencia(double x, int iteracion){
 	
-	if(iteracion <= 1) return 1;
+	if(iteracion == 0) return 1;
+	if(iteracion == 1) return x;
 	
-	for(int i = 1; i <= iteracion; i++){
-		x *= x;
+	if(iteracion > 1) {
+		
+		double potencia = 1.0;
+		
+		for(int i = 1; i <= iteracion; i++){
+			potencia *= x;
+		}
+		
+
+		return potencia;
+				
 	}
 	
-	return x;
+
 }
 
 double factorial(int iteracion){
 	
 	if(iteracion <= 1) return 1;
 	else{
+		
 		double fact = 1;
-		for(int i=1; i <= iteracion; i++){
+		
+		for(int i = 2; i <= iteracion; i++){
 			fact *= i;
 		}
-		
+
 		return fact;
 	}
 	

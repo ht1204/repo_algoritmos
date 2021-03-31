@@ -28,27 +28,34 @@ def inputNumber(order):
       if(value < 1 or value > 1000):
           print('Ingrese entre uno hasta mil terminos ')
       else:
-          break    
+          break
+  else:
+    return value    
 
   return value
 
 
 def potencia(x, iteracion):
-  if(iteracion <= 1):
+  if(iteracion == 0):
     return 1
-  
-  for i in range(1, iteracion + 1):
-    x *= x
-  
-  return x
+
+  if(iteracion == 1):
+    return x
+
+  if(iteracion > 1):
+    potencia = 1    
+    for i in range(1, iteracion + 1):
+      potencia *= x
+    
+    return potencia
+
 
 def factorial(iteracion):
   if(iteracion <= 1):
     return 1
-
   else:
     fact = 1
-    for i in range(1, iteracion + 1):
+    for i in range(2, iteracion + 1):
       fact *= i
   
     return fact    
@@ -63,7 +70,10 @@ def series():
   for i in range(0, n):
     sumaSerie += potencia(x, i) / factorial(i)
 
-  print("\nResultado suma de serie : ",sumaSerie)
+  formatDecimalPlaces="{:.5f}"
+  print("\nResultado suma de serie : ",
+      str(formatDecimalPlaces.format(sumaSerie))
+  )
 
 
 
