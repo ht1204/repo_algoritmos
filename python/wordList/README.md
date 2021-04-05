@@ -1,2 +1,2 @@
 ## WordList
-Mini-asistente para ordenar alfabéticamentepalabras que se hallen en una columna de un archivo plano con extensión *.txt* y les agrega *' : '* al final de cada una, adecuado para definiciones cuando se vaya a escribir en un archivo aparte.
+Mini-asistente para ordenar alfabéticamente palabras que se hallen en una columna de un archivo plano con extensión *.txt* y les agrega *' : '* al final de cada una, adecuado para definiciones cuando se vaya a escribir en un archivo aparte.
