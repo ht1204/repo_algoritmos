@@ -38,8 +38,8 @@ while not(mag(block.p)< almost_zero_p and F_mu_s>=mag(F_spring)):
 
     F_spring=-k*(block.pos-L)              #Se aplica la segunda ley de Newton
     Fnet=F_spring+F_mu_k                   #Se actualiza "block.pos"  una vez
-    block.p=block.p+Fnet*dt                #se actualiza la posicion del bloque en la animacion
-    block.pos=block.pos+block.p/m*dt       #Al actualizarse "spring.axis", se actualiza
+    block.p=block.p+Fnet*dt                #se actualiza el momentum del bloque en la animacion
+    block.pos=block.pos+block.p/m*dt       #Al actualizarse "spring.axis", la posición se actualiza
     spring.axis=block.pos-spring.pos       #la longitud del resorte en la animacion.
 
     d=d+mag(block.p/m)*dt                   #Se actualiza la distancia recorrida por el bloque: d->d+|p/m|*dt,p=m*v

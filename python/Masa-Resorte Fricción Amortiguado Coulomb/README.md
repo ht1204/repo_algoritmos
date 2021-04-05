@@ -7,3 +7,6 @@ Se tiene el análisis de un sistema masa-resorte en una superficie con fricción
 Se utilizó *python 2.x* con *Visual Python (VPython)* para la codificación en equipo local y *glowscript* para simulación en entorno online (dos maneras de simular con *Visual Python*).
 
 Ver documentación que contiene desarrollo del ejercicio, guía de instalación y pruebas, junto con referencias de apoyo.
+
+Versión con Glowscript: https://glowscript.org/#/user/HT/folder/MyPrograms/program/CoulombOsc
+Hacer clic en *Edit this program*
