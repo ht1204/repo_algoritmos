@@ -1,0 +1,5 @@
+## Problemas Algoritmos Python Universidad de Lima - 2020
+
+1. Escriba un algoritmo en Python que genere 200 números aleatorios entre 100 y 1000, luego genere un diccionario cuyas claves son 7, 11, 13 y 17 y los valores sean cantidades de múltiplos de esos números, si el número es múltiplo de más de uno de las claves entonces deberá contar en cada clave. Ejemplo, el número 200 es múltiplo de 2 y 5, por lo tanto, en el diccionario debería quedar: *"2:1, 5:1"*
+
+2. Se tiene un diccionario que almacena los datos de estudiantes y tiene la siguiente estructura: la clave es el código del alumno y el valor es una lista que contiene la calificación del alumno en sus evaluaciones. Escriba un algoritmo que permita procesar el diccionario y mostrar las 3 mejores notas del alumno. Debe utilizar el algoritmo bubble sort para ordenar los elementos.
