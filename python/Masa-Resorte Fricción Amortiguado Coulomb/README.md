@@ -9,4 +9,5 @@ Se utilizó *python 2.x* con *Visual Python (VPython)* para la codificación en 
 Ver documentación que contiene desarrollo del ejercicio, guía de instalación y pruebas, junto con referencias de apoyo.
 
 Versión con Glowscript: https://glowscript.org/#/user/HT/folder/MyPrograms/program/CoulombOsc
+
 Hacer clic en *Edit this program*
