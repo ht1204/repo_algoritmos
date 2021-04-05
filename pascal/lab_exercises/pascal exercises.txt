@@ -1,0 +1,219 @@
+var s:=string;
+begin
+readln(s);
+write(copy(s,1,5));
+readln
+end.
+_____________________
+
+ var
+  s: string;
+  i: integer;
+ 
+begin
+  write('Enter string:');
+  readln(s);
+  if length(s) < 4 then 
+    writeln('Entered string is too short...')
+  else
+    for i := length(s) downto length(s) - 3 do
+      writeln(s[i]);
+end.
+________________
+
+
+var
+  s,t:string;
+  c,i,n:byte;
+begin
+  write('Enter you name:');
+  readln(s);
+  for i:=1 to length(s) do begin
+    n:=ord(s[i]);
+    write(s[i],' ',n:4,' ');
+    t:='';
+    while n>0 do begin
+      t:=chr(n mod 2+48)+t;
+      n:=n div 2;
+    end;
+    writeln(t);
+  end;
+end.
+
+for i:=1 to length(s) do begin
+    n:=ord(s[i]);
+    writeln(s[i],' ',n:4,' ',dec2numb(n,1,2));
+  end;
+
+_________________________
+
+var
+  s:string;
+  c,i:byte;
+begin
+  write('Enter string:');
+  readln(s);
+  if length(s)<15 then writeln('Entered string is too short...') else
+    begin
+      for i:=5 to 15 do c:=c+ord(s[i]='*');
+      writeln('A symbol "*" is found in the string from 5 to 15 position ',c,' times');
+    end;
+end.
+
+
+Можно проще:
+
+var i, n: Integer; s: String;
+begin
+  Write('Строка: '); ReadLn(s); s:=Copy(s,5,15); {n:=0;}
+  for i:=1 to Length(s) do Inc(n,Ord(s[i]='*'));
+  WriteLn(n);
+end.
+или ближе к FreePascal:
+
+
+var n: Integer; s: String; c: Char;
+begin
+  Write('Строка: '); ReadLn(s); {n:=0;}
+  for c in Copy(s,5,15) do Inc(n,Ord(c='*'));
+  WriteLn(n);
+end.
+
+var
+  s:string;
+  c,i:byte;
+begin
+  write('Enter string:');
+  readln(s);
+  if length(s)<15 then writeln('Entered string is too short...') else
+    begin
+      for i:=5 to 15 do c:=c+ord(s[i]='*');
+      writeln('A symbol "*" is found in the string from 5 to 15 position ',c,' times');
+    end;
+end.
+
+______________________________
+var
+  s:string;
+begin
+  write('Enter string:');
+  readln(s);
+  if length(s)<4 then writeln('Entered string is too short...') else
+                      writeln('Last four symbols:',copy(s,length(s)-3,4));
+end.
+
+var
+  s: string;
+  i: integer;
+ 
+begin
+  write('Enter string:');
+  readln(s);
+  if length(s) < 4 then 
+    writeln('Entered string is too short...')
+  else
+    for i := length(s) downto length(s) - 3 do
+      writeln(s[i]);
+end.
+_____________________________
+
+var
+s:string;
+i:dword;
+begin
+  readln(s);
+  for i:=length(s) downto 1 do writeln(s[i])
+end.
+
+uses strutils;
+var s:string;
+begin
+ readln(s);
+ writeln(ReverseString(s))
+end.
+
+_________________
+
+var
+s:string;
+i:dword;
+begin
+  readln(s);
+  for i:=1 to length(s) do writeln(s[i])
+end.
+
+uses strutils;
+var s:string;
+begin
+ readln(s);
+ writeln(ReverseString(s))
+end.
+
+_____________________
+Uses Graph,wincrt;
+var
+  gd,gm,x,y,dx,dy,wx,wy:integer;
+  c:char;
+begin
+  randomize;
+  gd:=Detect;
+  InitGraph(gd,gm,'');
+  x:=GetMaxX div 2;
+  y:=GetMaxY div 2;
+  wx:=TextWidth('*');
+  wy:=TextHeight('*');
+  SetColor(White);
+  SetFillStyle(SolidFill,Black);
+  repeat
+    while not keypressed do begin
+      Bar(x,y,x+wx,y+wy);
+      x:=x+dx;
+      y:=y+dy;
+      if x>=GetMaxX-wx then dx:=-1;
+      if y>=GetMaxY-wy then dy:=-1;
+      if x<wx then dx:=1;
+      if y<wy then dy:=1;
+      OutTextXY(x,y,'*');
+      delay(10);
+    end;
+    c:=readkey;
+    Case  upcase(c) of
+      'Q':begin dx:=-1;dy:=-1;end;
+      'W':begin dx:=0;dy:=-1;end;
+      'E':begin dx:=1;dy:=-1;end;
+      'A':begin dx:=-1;dy:=0;end;
+      'S':begin dx:=0;dy:=1;end;
+      'D':begin dx:=1;dy:=0;end;
+      'Z':begin dx:=-1;dy:=1;end;
+      'C':begin dx:=1;dy:=1;end;
+   end;
+ 
+  until c=#27;
+  closegraph;
+end.
+
+uses Crt;
+const
+  Up='QWE789'#71#72#73; Dn='ZSXC123'#79#80#81;
+  Lt='QAZ741'#71#75#79; Rt='EDC963'#73#77#81;
+var x, y, dx, dy: Integer; c: Char;
+begin
+  x:=Lo(WindMax) div 2; y:=Hi(WindMax) div 2;
+  repeat
+    GotoXY(x,y); Write('*');
+    repeat
+      c:=UpCase(ReadKey); if c=#0 then c:=ReadKey;
+      dx:=-Ord(0<Pos(c,Lt))+Ord(0<Pos(c,Rt));
+      dy:=-Ord(0<Pos(c,Up))+Ord(0<Pos(c,Dn));
+    until (Abs(dx)+Abs(dy)>0) or (c=#27);
+    GotoXY(x,y); Write(' ');
+    Inc(x,dx); Inc(y,dy);
+    if x<1 then x:=Lo(WindMax) else if x>Lo(WindMax) then x:=1;
+    if y<1 then y:=Hi(WindMax)+1 else if y>Hi(WindMax)+1 then y:=1;
+  until c=#27;
+end.
+
+
+
+
+
