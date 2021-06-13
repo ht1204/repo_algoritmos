@@ -1,0 +1,101 @@
+1 Array Reverse without using Extra space
+
+// Array Reverse without using Extra space 
+// Time Complexity - O(n) 
+import java.util.*; 
+import java.lang.*; 
+import java.io.*; 
+ 
+/* Name of the class has to be "Main" only if the class is public. */ 
+class CyberCoders 
+{ 
+	public static void main (String[] args) throws java.lang.Exception 
+	{ 
+		int[] ar = new int[]{3,4,2,1,5,6}; 
+		int n = ar.length; 
+		int temp = 0; 
+		for(int i=0;i<n/2;i++) 
+		{ 
+		   temp = ar[i]; 
+		   ar[i] = ar[n-1-i]; 
+		   ar[n-1-i] = temp; 
+		} 
+		 
+		for(int i=0;i<n;i++) 
+		{ 
+		    System.out.print(ar[i]+" "); 
+		} 
+	} 
+} 
+2. Find the largest and smallest element in an unsorted integer Array
+
+//Find minimum and maximum element in an unsorted array in java 
+// Time Complexity - O(n) 
+import java.util.*; 
+import java.lang.*; 
+import java.io.*; 
+ 
+class CyberCoders 
+{ 
+	public static void main (String[] args) throws java.lang.Exception 
+	{ 
+		int[] ar = new int[]{3,4,2,1,5,-6,-2}; 
+		int max = Integer.MIN_VALUE; 
+		int min = Integer.MAX_VALUE; 
+		for(int data : ar) 
+		{ 
+		    max = data>max ? data:max; 
+		    min = data<min ? data:min; 
+		} 
+	System.out.println("Maximum value :"+max); 
+	System.out.println("Minimum value :"+min); 
+	} 
+} 
+3. Find the missing number using XOR in an array -
+
+//Find the mssing number in array using XOR  
+// Here range is from 1 to n 
+// There are n-1 Integers and no duplicates elements 
+// Time Complexity - O(n) 
+// Space Complexity - O(1) 
+ 
+/*_______ XOR PROPERTIES________*/ 
+ 
+// A ^ A = 0  
+// A1^A2^A3............^AN = A and 
+// A1^A2^A3^............^AN-1 = B THEN 
+// A^B = AN 
+ 
+/*_______________XOR CALCULATION 1 TO n________________*/ 
+//XOR of all numbers from 1 to n 
+// n%4 == 0 ---> n 
+// n%4 == 1 ---> 1 
+// n%4 == 2 ---> n + 1 
+// n%4 == 3 ---> 0 
+ 
+//Slower way of implementing the formula 
+// long xor = (n % 4 == 0) ? n : (n % 4 == 1) ? 1 : (n % 4 == 2) ? n + 1 : 0; 
+//Faster way of implementing the formula 
+// long xor = (n>>1)&1 ^ (((n&1)>0)?1:n); 
+ 
+ 
+import java.util.*; 
+import java.lang.*; 
+import java.io.*; 
+ 
+class CyberCoders 
+{ 
+	public static void main (String[] args) throws java.lang.Exception 
+	{ 
+		int[] ar = new int[]{1,2,3,4,5,6,8,9,10}; 
+		int n = ar.length+1; 
+		long A = (n>>1)&1 ^ (((n&1)>0)?1:n);// XOR of All numbers from 1 to n 
+		for(int i=0;i<ar.length;i++) 
+		{ 
+		    if(ar[i]!=0) 
+		       A ^= ar[i]; 
+		} 
+	    System.out.println("Missing Element :"+A); 
+    } 
+} 
+
