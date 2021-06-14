@@ -1,0 +1,47 @@
+Escribe un numero de 20 digitos como maximo: 12345678901234567890
+Digitos:   1  2  3  4  5  6  7  8  9  0  1  2  3  4  5  6  7  8  9  0
+
+#include <stdio.h>
+#define N 19
+ 
+int main( void )
+{
+   int c, i, n;
+   int digitos[N];
+   unsigned long long int num;
+ 
+   printf( "Escribe un numero de %d digitos como maximo: ", N );
+   fflush( stdout );
+   num = 0;
+   for( n = 0; n < N && (c = getchar()) != '\n'; n++ )
+   {
+      digitos[n] = c - '0';
+      num *= 10;
+      num += digitos[n];
+   }
+   printf( "Digitos: " );
+   for( i = 0; i < n; ++i )
+      printf( " %3d,", digitos[i] );
+   return 0;
+}
+
+Claro que si lo que queremos es exclusivamente imprimir las cifras esto irá mejor, puedes meter cuantas cifras quieras:
+
+#include <stdio.h>
+#define N 100
+ 
+int main( void )
+{
+   int i, n;
+   char digitos[N];
+   printf( "Escribe un numero de %d digitos como maximo: ", N );
+   fflush( stdout );
+   scanf ("%s",digitos);
+   /*cuento los digitos*/
+   for (n=0;digitos[n]!='\0';n++);
+  /*los imprimo*/
+   for (i=0;i<n;i++)
+    printf ("%3c",digitos[i]);
+   return 0;
+}
+ 
