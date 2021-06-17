@@ -28,3 +28,6 @@ Can be adapted to more languages according to the data related to frequency of l
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Made By
+Sará Luna UwU and her classmates in Mexico
